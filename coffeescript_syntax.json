@@ -1,0 +1,6 @@
+{
+    "output_dir": "tmp",
+    "plugins": ["embedded", "html", "js_syntax", "ruby_syntax", "python", "coffeescript_syntax"],
+    "include_sample": true,
+    "search_path": ["../plugins"]
+}
