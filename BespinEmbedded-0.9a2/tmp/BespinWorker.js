@@ -412,7 +412,7 @@ exports.CoffeeScriptSyntax = new StandardSyntax({
       regex: /^\d(?![a-zA-Z])/,
       tag: 'number'
     }, {
-      regex: /^\/.*\//,
+      regex: /^\/.*\/g?i?m?s?/,
       tag: 'number'
     }, {
       regex: /^'''/,
@@ -442,7 +442,7 @@ exports.CoffeeScriptSyntax = new StandardSyntax({
       regex: /^#.*/,
       tag: 'comment'
     }, {
-      regex: /^(::|:|&gt;=|&lt;=|&gt;|&lt;|!=|!|\?=|\?|!=|=|==|\-=|\+=|\-\-|\+\+|\-|\+|\/|\*|\.\.\.|\.\.)/,
+      regex: /^(::|:|>=|<=|>|<|!=|!|\?=|\?|!=|=|==|\-=|\+=|\-\-|\+\+|\-|\+|\/|\*|\.\.\.|\.\.)/,
       tag: 'operator'
     }, {
       regex: /^[A-Za-z_][A-Za-z0-9_]*/,
@@ -467,7 +467,7 @@ exports.CoffeeScriptSyntax = new StandardSyntax({
   ],
   literal: [
     {
-      regex: /^[^\\]`/,
+      regex: /^[^\\]?`/,
       tag: 'directive',
       then: 'start'
     }, {
@@ -477,7 +477,7 @@ exports.CoffeeScriptSyntax = new StandardSyntax({
   ],
   qstring: [
     {
-      regex: /^[^\\]'/,
+      regex: /^[^\\]?'/,
       tag: 'string',
       then: 'start'
     }, {
@@ -487,7 +487,7 @@ exports.CoffeeScriptSyntax = new StandardSyntax({
   ],
   q2string: [
     {
-      regex: /^[^\\]"/,
+      regex: /^[^\\]?"/,
       tag: 'string',
       then: 'start'
     }, {

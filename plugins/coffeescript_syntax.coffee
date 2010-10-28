@@ -74,7 +74,7 @@ exports.CoffeeScriptSyntax = new StandardSyntax
 
     {regex: /^\d(?![a-zA-Z])/, tag: 'number'} # Numbers
 
-    {regex: /^\/.*\//, tag: 'number'} # Regexes.
+    {regex: /^\/.*\/g?i?m?s?/, tag: 'number'} # Regexes.
 
     {regex: /^'''/, tag: 'string', then: 'q3string'} # Single-quoted here-docs.
 
@@ -90,7 +90,7 @@ exports.CoffeeScriptSyntax = new StandardSyntax
 
     {regex: /^#.*/, tag: 'comment'} # Single-line comments.
 
-    {regex: /^(::|:|&gt;=|&lt;=|&gt;|&lt;|!=|!|\?=|\?|!=|=|==|\-=|\+=|\-\-|\+\+|\-|\+|\/|\*|\.\.\.|\.\.)/, tag: 'operator'} # Operators.
+    {regex: /^(::|:|>=|<=|>|<|!=|!|\?=|\?|!=|=|==|\-=|\+=|\-\-|\+\+|\-|\+|\/|\*|\.\.\.|\.\.)/, tag: 'operator'} # Operators.
 
     {regex: /^[A-Za-z_][A-Za-z0-9_]*/, tag: 'plain'}
     
@@ -105,17 +105,17 @@ exports.CoffeeScriptSyntax = new StandardSyntax
   ]
 
   literal: [
-    {regex:  /^[^\\]`/, tag: 'directive', then: 'start'}
+    {regex:  /^[^\\]?`/, tag: 'directive', then: 'start'}
     {regex: /^./, tag: 'directive'}
   ]
 
   qstring: [
-    {regex:  /^[^\\]'/, tag: 'string', then: 'start'}
+    {regex:  /^[^\\]?'/, tag: 'string', then: 'start'}
     {regex: /^./, tag: 'string'}
   ]
 
   q2string: [
-    {regex:  /^[^\\]"/, tag: 'string', then: 'start'}
+    {regex:  /^[^\\]?"/, tag: 'string', then: 'start'}
     {regex: /^\#\{.*?\}/, tag: 'operator'} # Interpolation.
     {regex: /^./, tag: 'string'}
   ]

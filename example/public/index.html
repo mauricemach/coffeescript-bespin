@@ -238,8 +238,7 @@ futurists =
  
 tag = "<impossible>"
 
-# [open, contents..., close] = tag.split("") 
-[open, contents..., close] = tag.split(" ")
+[open, contents..., close] = tag.split("")
  
 Account = (customer, cart) ->
   @customer = customer
@@ -276,8 +275,7 @@ cholesterol = 127
 healthy = 200 > cholesterol > 60
  
 author = "Wittgenstein"
-# quote  = "A picture is a fact. -- #{author}"
-quote  = "A picture is a fact. -- #{author} "
+quote  = "A picture is a fact. -- #{author}"
  
 sentence = "#{ 22 / 7 } is a decent approximation of π"
  
